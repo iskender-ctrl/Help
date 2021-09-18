@@ -11,7 +11,7 @@ public class MaskScript : MonoBehaviour
     public  GameObject HandMask;
     private GameObject[] Viruses;
     public GameObject Player;
-    public ParticleSystem VirusDestroyParticle1,VirusDestroyParticle2,VirusDestroyParticle3,VirusDestroyParticle4;
+    public ParticleSystem VirusDestroyParticle1;
     PointScript Scores;
     public float distance;
     public Animator anim;
@@ -27,20 +27,13 @@ public class MaskScript : MonoBehaviour
         Viruses=GameObject.FindGameObjectsWithTag("Virus");
         Scores=GameObject.FindWithTag("Player").GetComponent<PointScript>();
         VirusDestroyParticle1.Stop();
-        VirusDestroyParticle2.Stop();
-        VirusDestroyParticle3.Stop();
-        VirusDestroyParticle4.Stop();
         PartPlusTen.Stop();
     }
 
     
     void Update()
     {
-        transform.Translate(0,-15*Time.deltaTime,0);
-        if (true)
-        {
-            
-        }
+        Attack();
     }
     void OnCollisionEnter(Collision col)
     {
@@ -55,23 +48,23 @@ public class MaskScript : MonoBehaviour
             col.gameObject.SetActive(false);
             HandMask.SetActive(true);
             VirusDestroyParticle1.Play();
-            VirusDestroyParticle2.Play();
-            VirusDestroyParticle3.Play();
-            VirusDestroyParticle4.Play();
             PartPlusTen.Play();
             VirusDestroyVoice.Play();
         }
     }
-    void OnTriggerEnter(Collider col)
+    void Attack()
     {
-        if (col.gameObject.tag=="Virus")
+        foreach (GameObject i in Viruses)
         {
-            col.gameObject.tag="NoVirus";
-            gameObject.SetActive(false);
-            Player.GetComponent<Move>().enabled=true;
-            anim.SetBool("Throw",false);
-            HandMask.SetActive(true);
-            transform.localPosition = new Vector3(0f,0f,0f);
+            distance = Vector3.Distance(transform.position,i.transform.position);
+            if (i.activeInHierarchy==true)
+            {
+                if (distance<=10f)
+                {
+                    transform.position=Vector3.MoveTowards(transform.position,i.transform.position,15*Time.deltaTime);
+                }
+            }
+            break;
         }
     }
 }

@@ -36,19 +36,19 @@ public class FinalEtap : MonoBehaviour
                 anim.SetBool("Sad",true);
                 NoPerson.SetActive(true);
             }
-            if (Syringe.SyringeSlider.value>=20&&Syringe.SyringeSlider.value<=50)
+            if (Syringe.SyringeSlider.value>=20&&Syringe.SyringeSlider.value<=70)
             {
                 Character1.SetActive(true);
                 FalseCharacter1.SetActive(false);
             }
-            if (Syringe.SyringeSlider.value>50&&Syringe.SyringeSlider.value<=170)
+            if (Syringe.SyringeSlider.value>70&&Syringe.SyringeSlider.value<=170)
             {
                 Character1.SetActive(true);
                 FalseCharacter1.SetActive(false);
                 Character2.SetActive(true);
                 FalseCharacter2.SetActive(false);
             }
-            if (Syringe.SyringeSlider.value>170&&Syringe.SyringeSlider.value<=200)
+            if (Syringe.SyringeSlider.value>170)
             {
                 Character1.SetActive(true);
                 FalseCharacter1.SetActive(false);
