@@ -15,6 +15,7 @@ public class FinalEtap : MonoBehaviour
     public TextMeshProUGUI TotalScoresTxt;
     public Animator anim;
     public GameObject NoPerson;
+    public GameObject BackGround;
     void Start()
     {
         Syringe=GameObject.FindWithTag("Player").GetComponent<PointScript>();
@@ -34,6 +35,7 @@ public class FinalEtap : MonoBehaviour
             if (Syringe.SyringeSlider.value<20)
             {
                 anim.SetBool("Sad",true);
+                BackGround.SetActive(true);
                 NoPerson.SetActive(true);
             }
             if (Syringe.SyringeSlider.value>=20&&Syringe.SyringeSlider.value<=70)

@@ -19,6 +19,7 @@ public class PointScript : MonoBehaviour
     public ParticleSystem PartNegativeTwenty;
     public AudioSource Plus;
     public AudioSource Transition;
+    public GameObject BackGround;
     void Start()
     {
         PartPlusTen.Stop();
@@ -61,7 +62,6 @@ public class PointScript : MonoBehaviour
             PartNegativeTen.Play();
             Destroy(col.gameObject);
         }
-
     }
     void OnTriggerEnter(Collider col)
     {
@@ -86,6 +86,7 @@ public class PointScript : MonoBehaviour
     {
         anim.SetBool("Fall",true);
         yield return new WaitForSeconds(3f);
+        BackGround.SetActive(true);
         LosePanel.SetActive(true);
     }
 }

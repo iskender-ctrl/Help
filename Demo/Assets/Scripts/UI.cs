@@ -9,6 +9,7 @@ public class UI : MonoBehaviour
 {
     public GameObject WinPanel;
     public GameObject NoPerson;
+    public GameObject BackGround;
     void Start()
     {
         
@@ -25,6 +26,7 @@ public class UI : MonoBehaviour
     IEnumerator ExampleCoroutine()
     {
         yield return new WaitForSeconds(4f);
+        BackGround.SetActive(true);
         WinPanel.SetActive(true);
         Time.timeScale = 0.0f;
     }
