@@ -28,3 +28,4 @@ Cmd: compileSnippet
 Cmd: disassembleShader
   platform=gles3 type=4 mask=6 insize=2372 outsize=2372 ok=1
 
+Cmd: shutdown

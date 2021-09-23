@@ -1,3 +1,7 @@
 Base path: 'C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
 
+Cmd: disassembleShader
+  platform=gles3 type=4 mask=6 insize=3809 outsize=3809 ok=1
+
+Cmd: shutdown

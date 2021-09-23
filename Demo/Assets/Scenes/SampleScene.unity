@@ -13649,6 +13649,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: JOINVirus (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1340897453757197764, guid: 0ea79720eb3083c4b896fda41918d086, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ea79720eb3083c4b896fda41918d086, type: 3}
 --- !u!1 &938259161
